@@ -1,0 +1,25 @@
+<div class="container" style="background-color:khaki;">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <ul>
+            <li *ngFor="let header of headers | async">
+            <div class="post-preview">
+                <a routerLink="/page">
+                    <h2 class="post-title">
+                        {{header.title}}
+                    </h2>
+                    <h3 class="post-subtitle">
+                        {{header.subtitle}}
+                    </h3>
+                </a>
+                <p class="post-meta">Posted by
+                    <a>{{header.postedBy}}</a>
+                    on {{header.date | date}}</p>
+                    <button type="button" (click)="deleteProduct(header.id)" class="btn btn-danger">Delete Post</button>
+            </div>
+            <hr>
+        </li>
+            </ul>
+        </div>
+    </div>
+</div>
